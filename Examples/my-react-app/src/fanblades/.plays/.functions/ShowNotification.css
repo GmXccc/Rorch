@@ -1,0 +1,27 @@
+/* my-react-app/src/fanblades/.plays/.functions/ShowNotification.css */
+.top-notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4caf50; /* 绿色背景 */
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* 确保弹窗在最上层 */
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    width: 500px; /* 设置宽度 */
+    height: 20px; /* 设置高度 */
+}
+
+/* 淡入淡出动画 */
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}

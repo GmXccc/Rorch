@@ -1,0 +1,15 @@
+/* my-react-app/src/fanblades/.states/aux_fan.2.css */
+
+.state2-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 全屏高度 */
+    background-color: #ffffff; /* 示例背景色 */
+}
+
+.state-toggle-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+}

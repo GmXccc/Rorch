@@ -1,0 +1,49 @@
+[server]
+address = "127.0.0.1"
+port = 8080
+
+  [server.security]
+  enable_tls = true
+  certificate = "/path/to/cert.pem"
+  key = "/path/to/key.pem"
+
+    [server.security.authentication]
+    method = "OAuth2"
+    tokens = ["token1", "token2"]
+
+  [server.logging]
+  level = "debug"
+  file = "/var/log/server.log"
+
+[database]
+type = "postgres"
+host = "localhost"
+port = 5432
+user = "dbuser"
+password = "dbpass"
+
+  [database.settings]
+  pool_size = 20
+  timeout = 30
+
+    [database.settings.replication]
+    enabled = true
+    replicas = 3
+
+  [database.migrations]
+  version = "1.2.3"
+  path = "/migrations"
+
+[features]
+experimental = false
+
+  [[features.modules]]
+  name = "authentication"
+  enabled = true
+    [features.modules.settings]
+    provider = "AuthProvider"
+    options = { client_id = "abc123", client_secret = "secret" }
+
+  [[features.modules]]
+  name = "analytics"
+  enabled = false
